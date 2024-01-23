@@ -14,7 +14,7 @@ def safe_print_list(my_list=[], x=0):
                 if i == x - 1:
                     break
             except:
-                print("invalid")
+                break
         print()
     else:
         for i in range(length):
