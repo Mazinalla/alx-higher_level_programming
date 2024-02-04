@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import string 
-print(*list(string.ascii_uppercase), sep='\n')
+import functools, operator, string
+print(functools.reduce(operator.concat, map(lambda x: (x+'\n',), list(string.ascii_uppercase))))
