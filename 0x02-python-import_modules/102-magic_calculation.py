@@ -1,3 +1,4 @@
+#!/bin/bash
 def magic_calculation(a, b):
     add, sub = __import__('magic_calculation_102', fromlist=('add', 'sub'))
     
