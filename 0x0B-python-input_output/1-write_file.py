@@ -7,5 +7,5 @@ def write_file(filename="", text=""):
     with open(filename, mode="w", encoding="UTF8") as file
     content = file.write(text)
 
-    '''return length of the text'''
+    '''function that return length of the text'''
     return len(text)
