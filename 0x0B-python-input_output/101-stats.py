@@ -1,40 +1,47 @@
-#!/usr/bin/python3
-"""
-reads stdin line by line and computes metrics
-"""
 import sys
+from collections import defaultdict
+import signal
 
-file_size = 0
-status_tally = {"200": 0, "301": 0, "400": 0, "401": 0,
-                "403": 0, "404": 0, "405": 0, "500": 0}
-i = 0
+# Initialize variables
+total_file_size = 0
+status_code_counts = defaultdict(int)
+lines_processed = 0
+
+def print_statistics(signum, frame):
+    # Print statistics upon interruption (CTRL + C)
+    print(f"Total file size: {total_file_size}")
+    for code in sorted(status_code_counts.keys()):
+        print(f"{code}: {status_code_counts[code]}")
+    sys.exit(0)
+
+# Register signal handler for CTRL + C
+signal.signal(signal.SIGINT, print_statistics)
+
 try:
+    # Read stdin line by line
     for line in sys.stdin:
-        tokens = line.split()
-        if len(tokens) >= 2:
-            a = i
-            if tokens[-2] in status_tally:
-                status_tally[tokens[-2]] += 1
-                i += 1
-            try:
-                file_size += int(tokens[-1])
-                if a == i:
-                    i += 1
-            except FileNotFoundError:
-                if a == i:
-                    continue
-        if i % 10 == 0:
-            print("File size: {:d}".format(file_size))
-            for key, value in sorted(status_tally.items()):
-                if value:
-                    print("{:s}: {:d}".format(key, value))
-    print("File size: {:d}".format(file_size))
-    for key, value in sorted(status_tally.items()):
-        if value:
-            print("{:s}: {:d}".format(key, value))
+        # Split the input line into components
+        parts = line.split(" ")
+
+        # Extract relevant information
+        file_size = int(parts[-1])
+        status_code = int(parts[-2])
+
+        # Update metrics
+        total_file_size += file_size
+        status_code_counts[status_code] += 1
+        lines_processed += 1
+
+        # Print statistics every 10 lines
+        if lines_processed % 10 == 0:
+            print(f"Total file size: {total_file_size}")
+            for code in sorted(status_code_counts.keys()):
+                print(f"{code}: {status_code_counts[code]}")
 
 except KeyboardInterrupt:
-    print("File size: {:d}".format(file_size))
-    for key, value in sorted(status_tally.items()):
-        if value:
-            print("{:s}: {:d}".format(key, value))
+    # Handle manual interruption (CTRL + C)
+    pass
+
+# Print final statistics
+print_statistics(None, None)
+
