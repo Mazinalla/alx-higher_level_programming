@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-for i in range(0, 100):
-    print(f"{i:04d}", end="")
-    if i == 99:
-        break
-    print(",", end="")
+def remove_char_at(str, n):
+    cpy = ""
+    for i in range(len(str)):
+        if i != n:
+            cpy += str[i]
+    return cpy
