@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-def remove_char_at(str, n):
-    cpy = ""
-    for i in range(len(str)):
-        if i != n:
-            cpy += str[i]
-    return cpy
+def print_reversed_list_integer(my_list=[]):
+    my_list.reverse()
+    print("{}".format(my_list))
+my_list = [1, 2, 3, 4, 5]
+print_reversed_list_integer(my_list)
