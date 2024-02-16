@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/usr/bin/python3 env
 for i in range(97, 123):
     continue
 while(i >= 97):
