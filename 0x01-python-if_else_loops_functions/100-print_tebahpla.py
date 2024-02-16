@@ -8,4 +8,3 @@ while(i >= 97):
     else:
         print("{}".format(chr(i - 32)), end="")
         i -= 1
-
