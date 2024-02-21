@@ -12,5 +12,6 @@ class Square:
     def __init__(self, __size):
         self.size = __size
     
+    '''calc the square root of size'''
     def square(self):
         self.size ** 2
