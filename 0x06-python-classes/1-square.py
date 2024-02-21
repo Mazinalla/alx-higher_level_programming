@@ -3,15 +3,18 @@
 '''class that defines a square'''
 
 class Square:
+    """
+    A class representing a square.
 
-    '''
-    class that defines a square
-    attr: size
-    methode: none
-    '''
-    def __init__(self, __size):
-        self.size = __size
-    
-    '''calc the square root of size'''
-    def square(self):
-        self.size ** 2
+    Attributes:
+    - __size (int): The length of each side of the square.
+    """
+
+    def __init__(self, size):
+        """
+        Initializes a Square instance with a specified side length.
+
+        Parameters:
+        - size (int): The length of each side of the square.
+        """
+        self.__size = size
