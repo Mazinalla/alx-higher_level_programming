@@ -29,7 +29,7 @@ class Square:
         return:
         The reference to the attribute
         '''
-        return self.__size
+        return self._size
     
     @size.setter
     def size(self, value):
@@ -43,7 +43,7 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = value
+            self._size = value
 
     @property        
     def position(self):
@@ -53,7 +53,7 @@ class Square:
         return:
         - 
         '''
-        return self.__position
+        return self._position
 
     @position.setter
     def position(self, value):
@@ -71,7 +71,7 @@ class Square:
         '''
         puplic method that return the current square area
         '''
-        return self.__size ** 2
+        return self.size ** 2
     
     def my_print(self):
         '''
