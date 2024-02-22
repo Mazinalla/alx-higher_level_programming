@@ -4,7 +4,7 @@
 class that defines a square
 '''
 
-class square:
+class Square:
     '''
     class that defines a square
     '''
@@ -63,10 +63,9 @@ class square:
         para:
         - value
         ''' 
-        if not all(isinstance(x, int) for x in value):
-            raise TypeError("position must be a tuple of 2 positive integer")
-        else:
-            self.__position = value
+        if not isinstance(value, tuple) or len(value) != 2 or not all(isinstance(i, int) for i in value) or any(i < 0 for i in value):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self._position = value
     
     def area(self):
         '''
@@ -87,3 +86,11 @@ class square:
 
         for _ in range(self.size):
             print(" " * self.position[0] + "#" * self.size)
+
+my_square = Square(5, (0, 0))
+print(my_square)
+
+print("--")
+
+my_square = Square(5, (4, 1))
+print(my_square)
