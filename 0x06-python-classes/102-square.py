@@ -45,3 +45,17 @@ class Square:
         puplic method that returns the current square area
         '''
         return self.__size ** 2
+    def __lt__(self, other):
+        return self.size < other.size
+
+    def __le__(self, other):
+        return self.size <= other.size
+
+    def __eq__(self, other):
+        return self.size == other.size
+
+    def __ne__(self, other):
+        return self.size != other.size
+
+    def __ge__(self, other):
+        return self.size >= other.size
