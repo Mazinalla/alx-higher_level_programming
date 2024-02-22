@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-
 '''class of square in'''
-
 
 
 class Square:
