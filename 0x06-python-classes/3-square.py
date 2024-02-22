@@ -2,8 +2,6 @@
 '''class of square in'''
 
 
-
-
 class Square:
     """
     A class representing a square.
@@ -17,7 +15,7 @@ class Square:
         Initializes a Square instance with an optional specified side length.
 
         Parameters:
-        - size (int, optional): The length of each side of the square. Default is 0.
+        - size : The length of each side of the square. Default is 0.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -25,7 +23,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
-    
+
     def area(self):
         '''
         Public instance method that returns the current square area
