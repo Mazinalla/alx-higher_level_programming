@@ -2,6 +2,8 @@
 
 '''class of square in'''
 
+
+
 class Square:
     """
     A class representing a square.

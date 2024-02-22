@@ -4,6 +4,8 @@
 import math
 
 
+
+
 class MagicClass:
     """Represent a circle."""
 

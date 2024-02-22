@@ -2,6 +2,8 @@
 
 '''class for Node'''
 
+
+
 class Node:
     """
     A class representing a node of a singly linked list.
