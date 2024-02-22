@@ -15,7 +15,7 @@ class Square:
         Initializes a Square instance with an optional specified side length.
 
         Parameters:
-        - size (int, optional): The length of each side of the square. Default is 0.
+        - size : The length of each side of the square. Default is 0.
         """
         self.size = size
 
