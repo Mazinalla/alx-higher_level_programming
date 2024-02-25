@@ -1,3 +1,2 @@
-#!/usr/bin/python3
-if 1:
-    __import__("os").write(1,b"#pythoniscool\n")
+#!/usr/bin/python3 
+import easy_print_101
