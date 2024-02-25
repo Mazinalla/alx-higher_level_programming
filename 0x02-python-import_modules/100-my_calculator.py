@@ -2,6 +2,7 @@
 import sys
 from calculator_1 import add, sub, mul, div
 
+
 def calculate_result(a, operator, b):
     if operator == '+':
         return add(a, b)
@@ -13,6 +14,7 @@ def calculate_result(a, operator, b):
         return div(a, b)
     else:
         return None
+
 
 def main():
     if len(sys.argv) != 4:
@@ -30,6 +32,7 @@ def main():
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
