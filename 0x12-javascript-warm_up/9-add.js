@@ -4,8 +4,4 @@ function add (a, b) {
 }
 const arg1 = +process.argv[2];
 const arg2 = +process.argv[3];
-if (!isNaN(arg1) && !isNaN(arg2)) {
-  console.log(add(arg1, arg2));
-} else {
-  console.log('Arguments should be integers');
-}
+console.log(add(arg1, arg2));
