@@ -2,8 +2,7 @@
 import urllib.request
 url = 'https://alx-intranet.hbtn.io/status'
 with urllib.request.urlopen(url) as response:
-    body = response.read()
+    body = response.read().decode('utf-8')
     print("Body response:")
-    print("    - type:", type(body))
-    print("    - content:", body)
-    print("    - utf8 content:", body.decode('utf-8'))
+    print("\t- type:", type(body))
+    print("\t- content:", body)
