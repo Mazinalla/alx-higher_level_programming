@@ -1,24 +1,13 @@
-#!/usr/bin/python3
-my_list = [1, 2, 3, 4, 5]
+#!/usr/bin/python
 def safe_print_list(my_list=[], x=0):
-    my_list = [1, 2, 3, 4, 5]
-    length = 0
-    for a in my_list:
-        length += 1
-    if x <= 0:
-        pass
-    elif x > 0 and x <= length:
-        for i in range(length):
-            try:
-                print(my_list[i], end="")
-                if i == x - 1:
-                    break
-            except:
+    try:
+        num_el = 0
+        for i in range(len(my_list)):
+            print(my_list[i], end="")
+            num_el += 1
+            if i + 1 == x:
                 break
         print()
-    else:
-        for i in range(length):
-            print(my_list[i], end="")
-        print()    
-        x = length
-    return x
+        return num_el
+    except:
+        print("Unknown Errot")
