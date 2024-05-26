@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def only_diff_elements(set_1, set_2):
-    '''a function that returns a set of all elements present in only one set'''
+    '''returns a set of all elements in only one set'''
     result = []
     for ele in set_1:
         if ele not in set_2:
