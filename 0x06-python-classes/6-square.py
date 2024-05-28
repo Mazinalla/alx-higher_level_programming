@@ -71,7 +71,6 @@ class Square:
         Raises:
         - TypeError: If position is not a tuple of 2 positive integers.
         """
-        def position(self, value):
         if type(value[0]) == int and type(value[1]) == int:
             self.__position = value
         else:
