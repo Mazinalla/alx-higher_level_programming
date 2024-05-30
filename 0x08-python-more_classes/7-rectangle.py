@@ -72,7 +72,7 @@ class Rectangle:
             return ""
         rect_str = ""
         for _ in range(self.height):
-            rect_str += f"{Rectangle.print_symbol}" * self.width + "\n"
+            rect_str += str(Rectangle.print_symbol) * self.width + "\n"
         return rect_str.strip()  # Remove the trailing newline character
 
     def __repr__(self):
