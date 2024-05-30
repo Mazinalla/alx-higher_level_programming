@@ -5,6 +5,7 @@ This module defines the Rectangle class with two parameters:
 2 - height (optional)
 '''
 
+
 class Rectangle:
     '''
     Class Rectangle that defines a rectangle.
