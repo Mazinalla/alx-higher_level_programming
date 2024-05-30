@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 '''
 this module define Rectangle class with two parameter:
 1 - width(optional)
