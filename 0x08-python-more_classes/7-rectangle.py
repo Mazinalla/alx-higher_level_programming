@@ -27,7 +27,7 @@ class Rectangle:
         Method to get the private width from the instance (getter)
         '''
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         '''
