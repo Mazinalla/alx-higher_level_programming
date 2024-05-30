@@ -18,41 +18,37 @@ class Rectangle:
         '''
         self.__width = width
         self.__height = height
-    
     @property
     def width(self):
         '''
-        method to get private width from instance(getter) 
+        method to get private width from instance(getter)
         '''
         return self.__width
-    
     @property
     def height(self):
         '''
         method to get private height from instance(getter) 
         '''
-        return self.__height
-    
+        return self.__height    
     @width.setter
     def width(self, value):
         '''
         method to set new value to private width(setter)
         '''
-        if(type(value) != int):
+        if(+value):
             raise TypeError("width must be an integer")
         elif(value < 0):
-            raise ValueError("width must be >= 0")
+            raise ValueError ("width must be >= 0")
         else:
-            self.__width = value
-    
+            self.__width = value    
     @height.setter
     def height(self, value):
         '''
         method to set new value to private height(setter)
         '''
-        if(type(value) != int):
+        if(+value):
             raise TypeError("width must be an integer")
         elif(value < 0):
-            raise ValueError("width must be >= 0")
+            raise ValueError ("width must be >= 0")
         else:
             self.__height = value
