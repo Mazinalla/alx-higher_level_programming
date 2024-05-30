@@ -3,6 +3,7 @@
 This module defines the Rectangle class with specific attributes and methods.
 '''
 
+
 class Rectangle:
     '''
     Class Rectangle that defines a rectangle.
@@ -26,7 +27,7 @@ class Rectangle:
         Method to get the private width from the instance (getter)
         '''
         return self.__width
-
+    
     @width.setter
     def width(self, value):
         '''
