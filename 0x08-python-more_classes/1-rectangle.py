@@ -35,7 +35,7 @@ class Rectangle:
         '''
         method to set new value to private width(setter)
         '''
-        if(+value):
+        if(not isinstance(value, int)):
             raise TypeError("width must be an integer")
         elif(value < 0):
             raise ValueError ("width must be >= 0")
@@ -46,7 +46,7 @@ class Rectangle:
         '''
         method to set new value to private height(setter)
         '''
-        if(+value):
+        if(not isinstance(value, int)):
             raise TypeError("width must be an integer")
         elif(value < 0):
             raise ValueError ("width must be >= 0")
