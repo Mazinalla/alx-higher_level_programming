@@ -16,21 +16,21 @@ class Rectangle:
         '''
         self.width = width
         self.height = height
-    @property
 
+    @property
     def width(self):
         '''
         method to retrive height(getter)
         '''
         return self.__width
-    @property
 
+    @property
     def height(self):
         '''
         method to retrive height(getter)
         '''
         return self.__height
-    
+
     @width.setter
     def width(self, value):
         '''
