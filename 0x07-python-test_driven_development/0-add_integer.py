@@ -3,6 +3,7 @@
 add two integer and return the value
 """
 
+
 def add_integer(a, b=98):
     '''
     function that add two integer
@@ -15,5 +16,6 @@ def add_integer(a, b=98):
         a = int(a)
         b = int(b)
     return a + b
+
 
 
