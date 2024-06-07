@@ -14,6 +14,7 @@ def print_square(size):
     return:
         print square
     '''
+
     if type(size) != int:
         raise TypeError("size must be an integer")
     if size < 0:
