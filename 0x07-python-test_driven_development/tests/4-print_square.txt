@@ -1,0 +1,28 @@
+Function that prints a square with the given size.
+
+    Args:
+        size (int): The size of the square to be printed. Must be a non-negative integer.
+
+    Raises:
+        TypeError: If size is not an integer.
+        ValueError: If size is negative.
+
+    Examples:
+        >>> print_square(2)
+        ##
+        ##
+        >>> print_square(4)
+        ####
+        ####
+        ####
+        ####
+        >>> print_square(0)
+        
+        >>> print_square(-1)
+        Traceback (most recent call last):
+            ...
+        ValueError: size must be >= 0
+        >>> print_square(2.5)
+        Traceback (most recent call last):
+            ...
+        TypeError: size must be an integer
