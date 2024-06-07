@@ -1,0 +1,27 @@
+Print a formatted string with the given first name and last name.
+from 3-say_my_name import say_my_name
+
+    Args:
+        first_name (str): The first name to print.
+        last_name (str): The last name to print (optional).
+
+    Raises:
+        TypeError: If first_name or last_name is not a string.
+
+    Examples:
+        >>> say_my_name("John", "Doe")
+        My name is John Doe
+        >>> say_my_name("Jane")
+        My name is Jane 
+        >>> say_my_name("Alice", "")
+        My name is Alice 
+        >>> say_my_name("Bob", "Smith")
+        My name is Bob Smith
+        >>> say_my_name(123, "Doe")
+        Traceback (most recent call last):
+            ...
+        TypeError: first_name must be a string
+        >>> say_my_name("John", 456)
+        Traceback (most recent call last):
+            ...
+        TypeError: last_name must be a string
