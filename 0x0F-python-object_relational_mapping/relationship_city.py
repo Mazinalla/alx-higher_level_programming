@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Defines the City class."""
+"""
+Defines the City class.
+"""
 
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
