@@ -17,7 +17,6 @@ import MySQLdb
 import sys
 
 def find_state(username, password, dbname, state_name):
-    # Connect to the database
     db = MySQLdb.connect(
         host="localhost",
         user=username,
@@ -26,29 +25,20 @@ def find_state(username, password, dbname, state_name):
         port=3306
     )
 
-    # Create a cursor object
     cursor = db.cursor()
 
-    # Execute the query to retrieve states where name matches the argument
     cursor.execute("SELECT * FROM states WHERE name = {} ORDER BY id ASC".format(state_name))
 
-    # Fetch all the rows
     states = cursor.fetchall()
-
-    # Print each state
     for state in states:
         print(state)
 
-    # Close the cursor and database connection
     cursor.close()
     db.close()
 
 if __name__ == "__main__":
-    # Retrieve command-line arguments
     username = sys.argv[1]
     password = sys.argv[2]
     dbname = sys.argv[3]
     state_name = sys.argv[4]
-
-    # Find and display states with the given name
     find_state(username, password, dbname, state_name)
