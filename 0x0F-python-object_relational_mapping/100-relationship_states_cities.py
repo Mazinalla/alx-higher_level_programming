@@ -12,13 +12,18 @@ The script connects to a MySQL server running on localhost at port 3306,
 and creates the State "California" with the City "San Francisco" from the specified database.
 """
 
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from relationship_state import Base, State
 from relationship_city import City
 import sys
 
+
 def create_state_city(username, password, dbname):
+    '''
+    Bla bla bla
+    '''
     # Create an engine that stores data in the local directory's hbtn_0e_100_usa database
     engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost:3306/{dbname}')
 
