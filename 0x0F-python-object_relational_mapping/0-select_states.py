@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 '''
 this is module for manibulating databases using MySQLdb and sqlalchemy
 '''
