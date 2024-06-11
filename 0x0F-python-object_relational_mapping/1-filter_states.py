@@ -26,19 +26,13 @@ def list_states_with_n(username, password, dbname):
         db=dbname,
         port=3306
     )
-
     cursor = db.cursor()
-
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
-
     states = cursor.fetchall()
-
     for state in states:
         print(state)
-
     cursor.close()
     db.close()
-
 if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
