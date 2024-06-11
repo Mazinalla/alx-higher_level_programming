@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that lists all State objects from the database hbtn_0e_6_usa.
+Script that prints the first State object from the database hbtn_0e_6_usa.
 
 Arguments:
     mysql_username: MySQL username
@@ -8,7 +8,7 @@ Arguments:
     database_name: MySQL database name
 
 The script connects to a MySQL server running on localhost at port 3306,
-and retrieves all State objects sorted by states.id in ascending order.
+and retrieves the first State object sorted by states.id in ascending order.
 """
 
 from sqlalchemy import create_engine
@@ -16,9 +16,9 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 import sys
 
-def list_states(username, password, dbname):
+def print_first_state(username, password, dbname):
     # Create an engine that stores data in the local directory's hbtn_0e_6_usa database
-    engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost:3306/{dbname}', echo=True)
+    engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost:3306/{dbname}')
 
     # Bind the engine to the metadata of the Base class
     Base.metadata.bind = engine
@@ -29,12 +29,14 @@ def list_states(username, password, dbname):
     # Create a Session
     session = Session()
 
-    # Query all State objects and sort by id
-    states = session.query(State).order_by(State.id).all()
+    # Query the first State object by id
+    first_state = session.query(State).order_by(State.id).first()
 
-    # Print the states
-    for state in states:
-        print(f"{state.id}: {state.name}")
+    # Print the first state or "Nothing" if table is empty
+    if first_state:
+        print(f"{first_state.id}: {first_state.name}")
+    else:
+        print("Nothing")
 
     # Close the session
     session.close()
@@ -45,5 +47,5 @@ if __name__ == "__main__":
     password = sys.argv[2]
     dbname = sys.argv[3]
 
-    # List all states
-    list_states(username, password, dbname)
+    # Print the first state
+    print_first_state(username, password, dbname)
