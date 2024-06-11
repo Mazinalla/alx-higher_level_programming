@@ -1,0 +1,1 @@
+the concept of ORM techiniqe and how to connect to database using only programing language
