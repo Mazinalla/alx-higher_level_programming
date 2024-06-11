@@ -30,7 +30,7 @@ def find_state(username, password, dbname, state_name):
     cursor = db.cursor()
 
     # Execute the query to retrieve states where name matches the argument
-    cursor.execute(f"SELECT * FROM states WHERE name = {state_name} ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE name = {} ORDER BY id ASC".format(state_name))
 
     # Fetch all the rows
     states = cursor.fetchall()
