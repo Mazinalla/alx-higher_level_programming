@@ -42,7 +42,7 @@ def list_cities(username, password, dbname):
 
     # Print each city
     for city in cities:
-        print(city)
+        print(f"({city[0]}, '{city[1]}', '{city[2]}')")
 
     # Close the cursor and database connection
     cursor.close()
