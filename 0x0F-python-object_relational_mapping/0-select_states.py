@@ -6,7 +6,10 @@ import MySQLdb
 import sys
 
 
+
 def list_states(username, password, dbname):
+    
+
     '''
     method that use for connect with database and make some queris
     '''
@@ -25,8 +28,6 @@ def list_states(username, password, dbname):
     cursor.close()
     db.close()
 if __name__ == "__main__":
-
-
     username = sys.argv[1]
     password = sys.argv[2]
     dbname = sys.argv[3]
