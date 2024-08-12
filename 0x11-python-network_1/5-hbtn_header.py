@@ -10,5 +10,9 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]
     resp = requests.get(url)
-    head = resp.headers
-    print(head["X-Request-Id"])
+    x_request_id = resp.headers.get("X-Request-Id")
+    # Print the value if the header exists, otherwise print a message
+    if x_request_id is not None:
+        print(x_request_id)
+    else:
+        print("X-Request-Id header not found")
