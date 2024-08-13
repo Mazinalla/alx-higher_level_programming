@@ -16,7 +16,7 @@ def get_github_user_id(username, token):
         user_info = response.json()
         print(f"{user_info['id']}")
     else:
-        print(f"{response.status_code}")
+        print(f"None")
 
 
 if __name__ == "__main__":
