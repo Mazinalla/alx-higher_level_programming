@@ -14,9 +14,9 @@ def get_github_user_id(username, token):
 
     if response.status_code == 200:
         user_info = response.json()
-        print(f"Your GitHub ID is: {user_info['id']}")
+        print(f"{user_info['id']}")
     else:
-        print(f"Failed to retr GitHub ID. Stat code: {response.status_code}")
+        print(f"{response.status_code}")
 
 
 if __name__ == "__main__":
