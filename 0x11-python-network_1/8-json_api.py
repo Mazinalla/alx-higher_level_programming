@@ -15,7 +15,7 @@ if __name__ == "__main__":
     try:
         json_resp = response.json()
 
-        if json_response:
+        if json_resp:
             print(f"[{json_resp.get('id')}] {json_resp.get('name')}")
         else:
             # If the JSON is empty, display "No result"
